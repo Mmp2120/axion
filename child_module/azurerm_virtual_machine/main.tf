@@ -21,3 +21,22 @@ resource "azurerm_windows_virtual_machine" "vm" {
     version   = "latest"
   }
 }
+resource "azurerm_network_security_group" "nsg" {
+  for_each = var.vms
+
+  name                = each.value.nsg_name
+  location            = each.value.location
+  resource_group_name = each.value.resource_group_name
+
+  security_rule {
+    name                       = "Allow-SSH"
+    priority                   = 100
+    direction                  = "Inbound"
+    access                     = "Allow"
+    protocol                   = "Tcp"
+    source_port_range          = "*"
+    destination_port_range     = "22"
+    source_address_prefix      = "*"
+    destination_address_prefix = "*"
+  }
+}

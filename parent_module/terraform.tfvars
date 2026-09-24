@@ -86,6 +86,7 @@ vms = {
     admin_username      = "mohitpt20"
     admin_password      = "Mohit8090@"
     nic_name            = "nic1"
+    nsg_name            ="nsg1"
   }
   vm2 = {
     name                = "axionbackendvm"
@@ -95,5 +96,6 @@ vms = {
     admin_username      = "mohitpt20"
     admin_password      = "Mohit8090@"
     nic_name            = "nic2"
+    nsg_name            ="nsg2"
   }
-}
+  }
