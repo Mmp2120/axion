@@ -2,6 +2,6 @@ variable "rgs" {}
 variable "sas" {}
 variable "vnet" {}
 variable "subnet" {}
-variable "vms" {
-
-}
+variable "public_ip" {}
+variable "nic" {}
+variable "vms" {}
